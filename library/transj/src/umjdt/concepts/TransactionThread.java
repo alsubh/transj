@@ -2,6 +2,9 @@ package umjdt.concepts;
 
 import java.util.*;
 
+import umjdt.Events.Event;
+import umjdt.Events.TransactionEvent;
+
 public class TransactionThread implements Runnable{
 
 	private List<Event> events = new ArrayList<Event>();

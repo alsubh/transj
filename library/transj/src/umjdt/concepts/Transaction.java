@@ -4,11 +4,14 @@ import com.arjuna.ats.internal.jta.transaction.jts.BaseTransaction;
 import java.io.Serializable;
 import java.util.*;
 
-public class Transaction extends BaseTransaction implements Serializable{
+import umjdt.Events.Event;
+import umjdt.Events.TransactionEvent;
+
+public class Transaction{
 
 	private static final long serialVersionUID = 1L;
 	private TransId id;
-	private State currentState;
+	private String currentState;
 	private int timeout;
 	private List<TransactionEvent> events = new ArrayList<TransactionEvent>();
 	private List<Operation> operations = new ArrayList<Operation>();
@@ -17,14 +20,16 @@ public class Transaction extends BaseTransaction implements Serializable{
 	private ResourceManager resourceManager= new ResourceManager();
 	private TwoPhaseCommitProtocol twoPhaseCommitProtocol = new TwoPhaseCommitProtocol();
 	private TransactionThread transactionThread; 
-				
-	public Transaction(TransId id, State _currentState){	
+	private List<TransactionManager> listTMs = new ArrayList<>();
+	private List<ResourceManager> listRMs= new ArrayList<>();
+	
+	public Transaction(TransId id, String _currentState){	
 		super();
 		this.id= id;
 		this.currentState = _currentState;
 	}
 	
-	public Transaction(State _currentState){
+	public Transaction(String _currentState){
 		super();
 		this.currentState = _currentState;
 	}
@@ -34,12 +39,16 @@ public class Transaction extends BaseTransaction implements Serializable{
 		this.setId(_id);		
 	}
 
-	public boolean isInBeginState(){
-		return getCurrentState().isBegin();			
+	public String getBeginState(){
+		return "begin";			
 	}
 
-	public boolean isInCommitState(){
-		return getCurrentState().isCommitted();			
+	public String getCommitState(){
+		return "commit";			
+	}
+	
+	public String getAbortState(){
+		return "rollback";			
 	}
 	
 	public TransId getId(){
@@ -73,14 +82,13 @@ public class Transaction extends BaseTransaction implements Serializable{
 			}
 		}
 		return null;
-		
 	}
 	
-	public State getCurrentState() {
+	public String getCurrentState() {
 		return currentState;
 	}
 	
-	public void setCurrentState(State _currentState) {
+	public void setCurrentState(String _currentState) {
 		this.currentState = _currentState;
 	}
 	
@@ -99,5 +107,68 @@ public class Transaction extends BaseTransaction implements Serializable{
 
 	public void setTimeout(int timeout) {
 		this.timeout = timeout;
+	}
+	public List<Operation> getOperations() {
+		return operations;
+	}
+
+	public void setOperations(List<Operation> operations) {
+		this.operations = operations;
+	}
+
+	public List<Resource> getResources() {
+		return resources;
+	}
+
+	public void setResources(List<Resource> resources) {
+		this.resources = resources;
+	}
+
+	public TransactionManager getTransactionManager() {
+		return transactionManager;
+	}
+
+	public void setTransactionManager(TransactionManager transactionManager) {
+		this.transactionManager = transactionManager;
+	}
+
+	public ResourceManager getResourceManager() {
+		return resourceManager;
+	}
+
+	public void setResourceManager(ResourceManager resourceManager) {
+		this.resourceManager = resourceManager;
+	}
+
+	public TwoPhaseCommitProtocol getTwoPhaseCommitProtocol() {
+		return twoPhaseCommitProtocol;
+	}
+
+	public void setTwoPhaseCommitProtocol(
+			TwoPhaseCommitProtocol twoPhaseCommitProtocol) {
+		this.twoPhaseCommitProtocol = twoPhaseCommitProtocol;
+	}
+
+	public TransactionThread getTransactionThread() {
+		return transactionThread;
+	}
+
+	public void setTransactionThread(TransactionThread transactionThread) {
+		this.transactionThread = transactionThread;
+	}
+	public List<TransactionManager> getListTMs() {
+		return listTMs;
+	}
+
+	public void setListTMs(List<TransactionManager> listTMs) {
+		this.listTMs = listTMs;
+	}
+
+	public List<ResourceManager> getListRMs() {
+		return listRMs;
+	}
+
+	public void setListRMs(List<ResourceManager> listRMs) {
+		this.listRMs = listRMs;
 	}
 }

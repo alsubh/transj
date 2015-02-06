@@ -1,13 +1,15 @@
 package umjdt.concepts;
 
+import umjdt.Events.TransactionEvent;
+
 public class Operation implements Cloneable{
 
 	private String name = "";
 	private OperationType type;
+	// return data 
 	private Object data = new Object();
 	private TransactionEvent beforeEvent  = null;
 	private TransactionEvent afterEvent  = null;
-	
 	private Transaction transaction; 
 	private TransactionThread transactionThread; 
 		

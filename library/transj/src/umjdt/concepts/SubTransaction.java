@@ -23,9 +23,8 @@ public class SubTransaction extends Transaction{
 		// TODO Auto-generated constructor stub
 	}
 	
-	public SubTransaction(TransId id, State _currentState,
-			Transaction transaction, TransId transid, int seqNumber) {
-		super(id, _currentState);
+	public SubTransaction(Transaction transaction, TransId transid, int seqNumber) {
+		super(transid);
 		this.transaction = transaction;
 		this.transid = transid;
 		this.seqNumber = seqNumber;
