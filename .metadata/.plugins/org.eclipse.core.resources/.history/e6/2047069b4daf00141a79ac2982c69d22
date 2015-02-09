@@ -1,0 +1,54 @@
+package umjdt.Events;
+
+import java.util.Timer;
+import java.util.TimerTask;
+
+import umjdt.Events.TransactionBeginCommitEvent.BeginTask;
+import umjdt.concepts.Timestamp;
+import umjdt.concepts.Transaction;
+
+public class TransactionCommitEvent extends TransactionEvent{
+	
+	private Timestamp CommitTime; 
+	
+	public TransactionCommitEvent(Transaction _localTransaction)
+	{
+		super.setTransaction(_localTransaction);
+		setBeginTime(getLocalTime());
+		setTransactionId(_localTransaction.getId());
+		super.setTransactionId(_localTransaction.getId());
+		setTimeout(_localTransaction.getTimeout());
+		super.setTimeout(_localTransaction.getTimeout());
+		super.setState("Commit");
+		_localTransaction.setCurrentState(getState());
+		
+		setTimer(new Timer());
+		getTimer().schedule(new BeginTask(), _localTransaction.getTimeout());
+	}
+	public Timer getTimer() {
+		return timer;
+	}
+	public void setTimer(Timer timer) {
+		this.timer = timer;
+	}
+	public Timestamp getBeginTime() {
+		return beginCommitTime;
+	}
+
+	public void setBeginTime(Timestamp beginCommitTime) {
+		this.beginCommitTime = beginCommitTime;
+	}
+	 public Timestamp getCommitTime() {
+		return CommitTime;
+	}
+	public void setCommitTime(Timestamp commitTime) {
+		CommitTime = commitTime;
+	}
+	class BeginTask extends TimerTask {
+	    public void run() {
+	      System.out.println("Time's up!");
+	      //timer.cancel(); 
+	      System.exit(0); //Stops everything 
+	    }
+	  }
+}

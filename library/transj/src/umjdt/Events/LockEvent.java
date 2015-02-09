@@ -1,5 +1,5 @@
 package umjdt.Events;
 
-public class LockEvent {
+public class LockEvent extends Event{
 
 }

@@ -3,10 +3,7 @@ package umjdt.concepts;
 import java.util.ArrayList;
 import java.util.List;
 
-import umjdt.Events.LockEvent;
-import umjdt.Events.ResourceEndEvent;
-import umjdt.Events.ResourceStartEvent;
-import umjdt.Events.UnlockEvent;
+import umjdt.Events.*;
 
 public class ResourceManager {
 
@@ -15,10 +12,8 @@ public class ResourceManager {
 	private Resource resource;
 	private TransactionManager tm;
 	private List<Resource> listResource = new ArrayList<>();
-	private ResourceEndEvent resourceEndEvent;
-	private ResourceStartEvent resourceStartEvent;
 	private LockEvent lockEvent;
-	private UnlockEvent unlockEvent;
+	
 	
 	public ResourceManager(){
 		
@@ -66,28 +61,10 @@ public class ResourceManager {
 	public void setListResource(List<Resource> listResource) {
 		this.listResource = listResource;
 	}
-	public ResourceEndEvent getResourceEndEvent() {
-		return resourceEndEvent;
-	}
-	public void setResourceEndEvent(ResourceEndEvent resourceEndEvent) {
-		this.resourceEndEvent = resourceEndEvent;
-	}
-	public ResourceStartEvent getResourceStartEvent() {
-		return resourceStartEvent;
-	}
-	public void setResourceStartEvent(ResourceStartEvent resourceStartEvent) {
-		this.resourceStartEvent = resourceStartEvent;
-	}
 	public LockEvent getLockEvent() {
 		return lockEvent;
 	}
 	public void setLockEvent(LockEvent lockEvent) {
 		this.lockEvent = lockEvent;
-	}
-	public UnlockEvent getUnlockEvent() {
-		return unlockEvent;
-	}
-	public void setUnlockEvent(UnlockEvent unlockEvent) {
-		this.unlockEvent = unlockEvent;
 	}
 }

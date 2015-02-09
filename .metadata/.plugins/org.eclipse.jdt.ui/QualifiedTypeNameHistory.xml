@@ -1,2 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy/>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.util.TimerTask"/>
+<fullyQualifiedTypeName name="umjdt.Events.TransactionBeginEvent.BeginTask"/>
+<fullyQualifiedTypeName name="com.arjuna.ats.jta.transaction.Transaction"/>
+<fullyQualifiedTypeName name="java.rmi.server.Operation"/>
+<fullyQualifiedTypeName name="java.security.Timestamp"/>
+<fullyQualifiedTypeName name="umjdt.Events.TimestampEvent"/>
+<fullyQualifiedTypeName name="umjdt.concepts.Operation"/>
+<fullyQualifiedTypeName name="com.arjuna.orbportability.logging.opLogger"/>
+<fullyQualifiedTypeName name="javax.management.OperationsException"/>
+<fullyQualifiedTypeName name="umjdt.Events.Event"/>
+<fullyQualifiedTypeName name="umjdt.Events.OperationEvent"/>
+<fullyQualifiedTypeName name="umjdt.concepts.Transaction"/>
+<fullyQualifiedTypeName name="umjdt.Events.TransactionEvent"/>
+<fullyQualifiedTypeName name="umjdt.concepts.TransactionThread"/>
+</qualifiedTypeNameHistroy>

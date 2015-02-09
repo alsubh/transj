@@ -4,10 +4,8 @@ import umjdt.Events.ExceptionThrownEvent;
 import umjdt.Events.IsBlockedEvent;
 import umjdt.Events.LockEvent;
 import umjdt.Events.RequestTimestampEvent;
-import umjdt.Events.ResourceEndEvent;
-import umjdt.Events.ResourceStartEvent;
 import umjdt.Events.TimeoutEvent;
-import umjdt.Events.UnlockEvent;
+
 
 public class Resource {
 

@@ -1,0 +1,55 @@
+package umjdt.Events;
+
+import umjdt.concepts.Operation;
+import umjdt.concepts.Transaction;
+import umjdt.concepts.TransactionThread;
+
+
+public class OperationEvent extends Event{
+
+	Transaction transaction;
+	Operation operation;
+	TransactionThread transactionThread;
+	
+	public OperationEvent(){ 
+		
+	}
+	
+	public OperationEvent(Operation _operation){ 
+		setOperation(_operation);
+	}
+	
+	public OperationEvent(Transaction _transaction, Operation _operation){ 
+		setTransaction(_transaction);
+		setOperation(_operation);
+	}
+	
+	public Transaction getTransaction() {
+		return transaction;
+	}
+
+	public void setTransaction(Transaction transaction) {
+		this.transaction = transaction;
+	}
+
+	public Operation getOperation() {
+		return operation;
+	}
+
+	public void setOperation(Operation operation) {
+		this.operation = operation;
+	}
+
+	public TransactionThread getTransactionThread() {
+		return transactionThread;
+	}
+
+	public void setTransactionThread(TransactionThread transactionThread) {
+		this.transactionThread = transactionThread;
+	}
+	
+	public void joinTo(OperationEvent _operactionevent){
+		_transaction.getTransactionThread().addEvent(_operactionevent));
+	}
+
+}

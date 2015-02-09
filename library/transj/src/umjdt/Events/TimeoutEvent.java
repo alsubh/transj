@@ -1,5 +1,5 @@
 package umjdt.Events;
 
-public class TimeoutEvent {
+public class TimeoutEvent extends Event{
 
 }

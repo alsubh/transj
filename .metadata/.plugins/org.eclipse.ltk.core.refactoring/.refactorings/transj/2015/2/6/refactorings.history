@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Encapsulate field &apos;umjdt.Events.TransactionEvent.markBoundary&apos; in &apos;umjdt.Events.TransactionEvent&apos;&#x0D;&#x0A;- Original project: &apos;transj&apos;&#x0D;&#x0A;- Original element: &apos;umjdt.Events.TransactionEvent.markBoundary&apos;&#x0D;&#x0A;- Getter method name: &apos;getMarkBoundary&apos;&#x0D;&#x0A;- Setter method name: &apos;setMarkBoundary&apos;&#x0D;&#x0A;- Field visibility: &apos;public&apos;&#x0D;&#x0A;- Use getter and setter methods in declaring type" comments="false" declaring="true" description="Encapsulate field &apos;markBoundary&apos;" flags="589830" getter="getMarkBoundary" id="org.eclipse.jdt.ui.self.encapsulate" input="/src&lt;umjdt.Events{TransactionEvent.java[TransactionEvent^markBoundary" insertion="16" setter="setMarkBoundary" stamp="1423343707307" version="1.0" visibility="1"/>
+</session>

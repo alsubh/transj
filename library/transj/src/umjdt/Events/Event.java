@@ -1,5 +1,6 @@
 package umjdt.Events;
 
+import java.util.Timer;
 import java.util.UUID;
 
 import umjdt.concepts.Timestamp;
@@ -13,8 +14,10 @@ public class Event {
 		private Timestamp minTime = new Timestamp();
 		private Timestamp maxTime = new Timestamp();
 		private Timestamp localTime = new Timestamp();
-		private TransId id ;
-		private TransId transId;
+		private TransId transactionId;
+		private int timeout;
+		private String state;
+		private Timer timer;
 
 		public Event()
 		{
@@ -32,12 +35,6 @@ public class Event {
 		public void setTransactionThread(TransactionThread _transactionThread) {
 			this.transactionThread = _transactionThread;
 		}
-		public TransId getId() {
-			return id;
-		}
-		public void setId(TransId id) {
-			this.id = id;
-		}
 		public Timestamp getMinTime() {
 			return minTime;
 		}
@@ -50,7 +47,6 @@ public class Event {
 		public void setMaxTime(Timestamp maxTime) {
 			this.maxTime = maxTime;
 		}
-		
 		public boolean threadEventHappensBefore(Event e)
 		{
 			if(e.getTransctionThread().getThisThread().getId() == this.getTransctionThread().getThisThread().getId())
@@ -66,10 +62,29 @@ public class Event {
 		public void setLocalTime(Timestamp localTime) {
 			this.localTime = localTime;
 		}
-		public TransId getTransId() {
-			return transId;
+		
+		public int getTimeout() {
+			return timeout;
 		}
-		public void setTransId(TransId transId) {
-			this.transId = transId;
+		public void setTimeout(int timeout) {
+			this.timeout = timeout;
+		}
+		public String getState() {
+			return state;
+		}
+		public void setState(String state) {
+			this.state = state;
+		}
+		public TransId getTransactionId() {
+			return transactionId;
+		}
+		public void setTransactionId(TransId transactionId) {
+			this.transactionId = transactionId;
+		}
+		public Timer getTimer() {
+			return timer;
+		}
+		public void setTimer(Timer timer) {
+			this.timer = timer;
 		}
 	}

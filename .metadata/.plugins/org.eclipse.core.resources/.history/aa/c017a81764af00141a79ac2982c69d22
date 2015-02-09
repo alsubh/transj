@@ -1,0 +1,15 @@
+package umjdt.Events;
+
+import java.rmi.server.Operation;
+
+import com.arjuna.ats.jta.transaction.Transaction;
+
+public class OperationEvent extends Event{
+
+	Transaction transaction;
+	Operation operation;
+	
+	public OperationEvent(){ 
+		
+	}
+}

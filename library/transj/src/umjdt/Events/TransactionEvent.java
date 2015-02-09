@@ -1,13 +1,19 @@
 package umjdt.Events;
 
 import java.util.*;
+
+import javax.management.OperationsException;
+
+import com.arjuna.orbportability.logging.opLogger;
+
 import umjdt.concepts.*;
 
 public class TransactionEvent extends Event{
 	
 	private Transaction transaction;
-	private Operation operation;
 	private int timeout;
+	private String markBoundary;
+	private Operation operation = new Operation();
 	private List<Operation> listOperation = new ArrayList<Operation>();
 	private TransactionManager transactionManager = new TransactionManager();
 	private ResourceManager resourcemanager= new ResourceManager();
@@ -32,14 +38,7 @@ public class TransactionEvent extends Event{
 	public void addOperation(Operation op){
 		listOperation.add(op);
 	}
-	
-	public Operation getOperation(){
-		return operation;
-	}
-	public void setOperation(Operation _operation) {
-		this.operation = _operation;
-	}
-	
+		
 	public ResourceManager getResourceManager() {
 		return resourcemanager;
 	}
@@ -60,6 +59,10 @@ public class TransactionEvent extends Event{
 		// TODO Auto-generated method stub
 		return false;
 	}
+	public boolean occursOn(Transaction _transaction) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 
 	public int getTimeout() {
 		return timeout;
@@ -75,5 +78,21 @@ public class TransactionEvent extends Event{
 
 	public void setParticipant(Object participant) {
 		this.participant = participant;
+	}
+
+	public String getMarkBoundary() {
+		return markBoundary;
+	}
+
+	public void setMarkBoundary(String markBoundary) {
+		this.markBoundary = markBoundary;
+	}
+
+	public Operation getOperation() {
+		return operation;
+	}
+
+	public void setOperation(Operation operation) {
+		this.operation = operation;
 	}
 }

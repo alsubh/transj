@@ -1,0 +1,17 @@
+1423354074539	Encapsulate field 'beginTime'
+1423363564528	Encapsulate field 'BeginCommitTime'
+1423367031738	Encapsulate field 'timeout'
+1423367036368	Encapsulate field 'state'
+1423368587926	Encapsulate field 'transactionId'
+1423370830173	Encapsulate field 'timer'
+1423370846181	Encapsulate field 'CommitTime'
+1423372013457	Rename type 'BeginTask'
+1423372034109	Rename type 'BeginTask'
+1423372387932	Encapsulate field 'abortTime'
+1423373021845	Encapsulate field 'beginCommitTime'
+1423391873587	Encapsulate field 'threadName'
+1423430140040	Encapsulate field 'eventOfTransaction'
+1423434443096	Delete element
+1423445870222	Infer generic type arguments
+1423447449166	Encapsulate field 'operation'
+1423450835083	Infer generic type arguments

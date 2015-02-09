@@ -2,9 +2,6 @@ package umjdt.concepts;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import com.arjuna.mw.wscf.exceptions.BegunFailedException;
-
 import umjdt.Events.*;
 
 public class TransactionManager{

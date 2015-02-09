@@ -1,0 +1,10 @@
+package umjdt.util;
+
+import java.util.HashMap;
+
+public class ListOperationOfTransaction {
+
+	Map<Object, Object> mapList = new HashMap<Object, Object>();
+	
+	
+}

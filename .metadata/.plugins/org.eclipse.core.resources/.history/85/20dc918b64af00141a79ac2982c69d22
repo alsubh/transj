@@ -1,0 +1,21 @@
+package umjdt.Events;
+
+import umjdt.concepts.Operation;
+import umjdt.concepts.Transaction;
+import umjdt.concepts.TransactionThread;
+
+
+public class OperationEvent extends Event{
+
+	Transaction transaction;
+	Operation operation;
+	TransactionThread transactionThread;
+	
+	public OperationEvent(){ 
+		
+	}
+	
+	public OperationEvent(Operation _operation){ 
+		this.operation= operation;
+	}
+}

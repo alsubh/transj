@@ -1,0 +1,12 @@
+package umjdt.util;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
+public class ListOperationOfTransaction {
+
+	Map<Object, Object> mapList = new HashMap<Object, Object>();
+	List<Event> eventList= new ArrayList<Event>();
+	
+}
